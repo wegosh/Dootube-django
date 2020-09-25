@@ -12,7 +12,7 @@ Uses the default Django development server.
 $ docker-compose up -d --build
 ```
 
-    Test it out at [http://localhost:8000](http://localhost:8000). The "app" folder is mounted into the container and your code changes apply automatically.
+Test it out at [http://localhost:8000](http://localhost:8000). The "app" folder is mounted into the container and your code changes apply automatically.
 
 1. To stop the development container:
 ```shell
@@ -32,7 +32,7 @@ $ docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --
 ```
     
 
-    Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
+Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
 
 1. To stop the production container:
 ```shell
