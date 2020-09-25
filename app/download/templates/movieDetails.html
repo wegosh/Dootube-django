@@ -1,0 +1,100 @@
+{% extends 'main.html' %}
+
+{% block videoDetails %}
+<hr class="videoDivider">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col" id="videoTitle">
+            <h2>
+                {{title}}
+            </h2>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="
+            {{thumbnail}}" alt="{{title}} thumbnail"  id="videoThumbnail">
+        </div>
+        <div class="col" id="video">
+            <table class="table table-bordered table-dark">
+                <tbody>
+
+                    
+                    <tr>
+                        <th scope="row">Quality</th>
+                        <th scope="col">Download <i class="fab fa-youtube" aria-hidden="true"></i></th>
+                        <th scope="col">File size</th>
+                      </tr>
+                    </thead>
+                    {% for value in dataVideo %}
+                    {% if value['mime_type'] == "video/mp4"%}
+                  <tr>
+                    <td>{{value['res']}} / {{value['fps']}}</td>
+                    <td>
+                        <div class="btn btn-primary" id="downloadMedia">
+                            <a href="/download/{{videoId}}/{{value['itag']}}/{{value['mime_type']}}">
+                            {% if value['mime_type'] == "video/mp4" %}
+                                mp4 
+                                {% if value['audio_codec'] is none %}
+                                    <i class="fas fa-volume-mute" aria-hidden="true"></i>
+                                {% else %}
+                                    <i class="fas fas fa-volume-up" aria-hidden="true"></i>
+                                {% endif %}
+                            {% endif%}
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        {{value['filesize']}}
+                    </td>
+                  </tr>
+                  {% endif %}
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+        <div class="col" id="music">
+            <table class="table table-bordered table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Bitrate</th>
+                    <th scope="col">Download <i class="fa fa-music" aria-hidden="true"></i></th>
+                    <th scope="col">File size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for value in dataMusic %}
+                  <tr>
+                    <td>{{value['abr']}}</td>
+                    <td>
+                        <div class="btn btn-primary" id="downloadMedia">
+                            <a href="/download/{{videoId}}/{{value['itag']}}/{{value['mime_type']}}">
+                            {% if value['mime_type'] == "audio/mp4" %}
+                                mp4 
+                            {% endif%}
+                            {% if value['mime_type'] == "audio/webm" %}
+                                webm
+                            {% endif%}
+
+                            {% if value['audio_codec'] is none %}
+                                <i class="fas fa-volume-mute" aria-hidden="true"></i>
+                            {% else %}
+                                <i class="fas fas fa-volume-up" aria-hidden="true"></i>
+                            {% endif %}
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        {{value['filesize']}}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    
+    </div>
+       
+</div>
+{% endblock %}
