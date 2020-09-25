@@ -28,8 +28,6 @@ Uses Gunicorn and Nginx.
 
     ```sh
     $ docker-compose -f docker-compose.prod.yml up -d --build
-    ```
-    ```sh
     $ docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
     ```
     
