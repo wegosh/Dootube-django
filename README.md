@@ -36,12 +36,12 @@
 >
 >>```shell
 >>$ docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --noinput
->>```
->    
+>>``` 
 >
 >Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
 >
 >* To stop the production container:
+>
 >>```shell
 >>$ docker-compose -f docker-compose.prod.yml down -v
 >>```
