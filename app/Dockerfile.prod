@@ -15,6 +15,9 @@ ENV PYTHONUNBUFFERED 1
 RUN pip install --upgrade pip
 COPY . .
 
+#install git to grab all dependencies 
+RUN apk update && apk add git
+
 # install dependencies
 COPY ./requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
@@ -44,7 +47,7 @@ WORKDIR $APP_HOME
 RUN chown app:app $APP_HOME/staticfiles
 
 # install dependencies
-RUN apk update && apk add libpq
+RUN apk update && apk add libpq vim
 COPY --from=builder /usr/src/app/wheels /wheels
 COPY --from=builder /usr/src/app/requirements.txt .
 RUN pip install --no-cache /wheels/*

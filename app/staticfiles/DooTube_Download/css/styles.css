@@ -7,8 +7,9 @@ body, html {
 }
 
 .bg-image {
+    
     /* The image used */
-    background-image: url("/staticfiles/images/_MG_3645.JPG");
+    background-image: url("/staticfiles/DooTube_Download/images/_MG_3645.JPG");
   
     /* Add the blur effect */
     filter: blur(6px);
