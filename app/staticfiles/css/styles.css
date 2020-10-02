@@ -1,0 +1,201 @@
+body, html {
+    height: 100%;
+}
+  
+* {
+    box-sizing: border-box;
+}
+
+.bg-image {
+    /* The image used */
+    background-image: url("/staticfiles/images/_MG_3645.JPG");
+  
+    /* Add the blur effect */
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+  
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p{
+    font-weight: 400!important;
+}
+
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    padding: 2rem;
+}
+
+.bg-text img{
+    height: 7rem;
+}
+
+.row{
+    padding-top: 1rem!important;
+    width: 100%!important;
+}
+
+
+.col, col-4{
+    padding: 10px!important;
+    width: 33%!important;
+}
+
+.btn:focus, .btn:active{
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.btn-primary{
+    color: white!important;
+    background-color: rgba(255,255,255,0.4)!important;
+    border: 0!important;
+    margin: 1rem;
+}
+
+.btn-primary:hover{
+    background-color: #cbd859!important;
+    color: black!important;
+    transition: all 0.5s!important;
+}
+
+.dropdown{
+    margin: 0;
+    padding: 0;
+
+}
+
+#urlPlaceholder{
+    width: 100%;
+    background-color: rgba(255,255,255,0.4);
+    color: white;
+    border: 0!important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+#urlPlaceholder::placeholder{
+    color: white;
+    border: 0!important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.movie-block{
+    margin-top: 3rem;
+}
+
+.invisible{
+    height: 0!important;
+    margin: 0;
+    padding: 0;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+
+a:link, a:visited, a:active{
+    color: white!important;
+    text-decoration: none!important;
+}
+
+a:hover, #find:hover {
+    text-decoration: none!important;
+    color: black!important;
+}
+
+#find:hover > a{
+    color: black!important;
+}
+
+#videoTitle{
+    margin-bottom: 2.5rem!important;
+}
+
+#videoThumbnail{
+    width: 90%!important;
+    height: 90%!important;
+    margin:0;
+    border-radius: 5px;
+    border: rgba(255,255,255,0.4) solid 1px;
+}
+
+hr.videoDivider{
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+td{
+    margin: 0!important;
+    padding: 0.2rem!important;
+    text-align: center!important;
+    vertical-align: center!important;
+    background-color: rgba(200,200,200,0.1)!important;
+    border-radius: 5px!important;
+}
+
+tr td{
+    margin: 0!important;
+    padding: 0.2rem!important;
+    text-align: center!important;
+    vertical-align: center!important;
+    background-color: rgba(200,200,200,0.1)!important;
+    
+    border-radius: 5px!important;
+}
+
+tr td:hover{
+    margin: 0!important;
+    padding: 0.2rem!important;
+    text-align: center!important;
+    vertical-align: center!important;
+    background-color: rgba(255,255,255,0.4);
+}
+
+th{
+    background-color: rgba(180,180,180,0.4)!important; 
+}
+
+table{
+    background-color: rgba(200,200,200,0.1)!important;
+    border: rgba(255,255,255,0.4) solid 1px!important;
+    border-radius: 5px!important;
+}
+
+#downloadMedia{
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    background-color: rgba(0,0,0, 0.4)!important;
+}
+
+#downloadMedia:hover > a{
+    color:#cbd859!important;
+}
+
+#message{
+    width: 100px!important;
+    height: 25px!important;
+    background-color: black;
+}
