@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,9 +8,9 @@
     <link
       rel="icon"
       type="image/png"
-      href="/static/images/Logo_Files/DooTube_720p.png"
+      href="/staticfiles/DooTube_Download/images/Logo_Files/DooTube_720p.png"
     />
-    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link rel="stylesheet" href="/staticfiles/DooTube_Download/css/styles.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -40,10 +42,11 @@
     <div class="bg-image"></div>
     <div class="bg-text">
       <form method="POST" action="">
+      {% csrf_token %}
         <div class="form-group">
           <label for="formGroupExampleInput">
             <img
-              src="/static/images/Logo_Files/Symbol-White.png"
+              src="/staticfiles/DooTube_Download/images/Logo_Files/Symbol-White.png"
               alt="DooApp logo white"
             />
             <h1>DooTube</h1>
