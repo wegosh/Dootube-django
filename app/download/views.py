@@ -15,7 +15,7 @@ def index(request):
     if request.method == "POST":
         video_id = extract.video_id(request.POST.get('ytDownloadUrl'))
         if video_id:
-            return redirect(request, 'movie_details', video_id = video_id)
+            return redirect('movie_details', video_id = video_id)
     return render(request, "download.html")
 
 
