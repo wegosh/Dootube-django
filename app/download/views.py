@@ -5,7 +5,7 @@ from pytube import YouTube, extract
 
 import json
 
-from dootube_helpers import *
+#from dootube_helpers import *
 
 
 YOUTUBE_URL = 'https://www.youtube.com/watch?v='
@@ -15,7 +15,7 @@ def index(request):
     if request.method == "POST":
         video_id = extract.video_id(request.POST.get('ytDownloadUrl'))
         if video_id:
-            return render(request, 'movieDetails.html', video_id = video_id)
+            return redirect(request, 'movie_details', video_id = video_id)
     return render(request, "download.html")
 
 
@@ -32,8 +32,8 @@ def movie_details(request, video_id):
     movie_title = youtube_movie_details.title
     movie_thumbnail = youtube_movie_details.thumbnail_url
 
-    
-    return render(request, 'movieDetails.html', context=...)
+
+    return render(request, "download.html")
 
 def download_audio(request, video_id):
     return FileResponse(open(YouTube(YOUTUBE_URL + video_id).streams.first().download(skip_existing=True), 'rb'))
