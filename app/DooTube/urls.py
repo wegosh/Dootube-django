@@ -18,7 +18,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from download.views import index
 
 urlpatterns = [
     path("", include('download.urls'), name="download"),
